@@ -1,6 +1,3 @@
-[ba-customer-booking-prediction-README.md](https://github.com/user-attachments/files/30058307/ba-customer-booking-prediction-README.md)
-# BA-customer-booking-prediction
-Predicting the flights booking of customer of British Airways
 # Predictive Modeling for Customer Booking – British Airways
 
 Predicts whether a customer will complete a flight booking, based on data from
@@ -41,6 +38,8 @@ more likely to complete their booking. Full metrics and charts are in the notebo
 └── README.md
 ```
 
+## ⚠️ About the data
+
 This repo ships with `data/sample_customer_booking.csv` — a **synthetically
 generated** dataset built to match the real Forage file's column names and
 class imbalance, so the notebook runs immediately with no setup. **It is not
@@ -52,7 +51,7 @@ Forage task and drop it into `data/` under the same filename (or update the
 path in the notebook's first `read_csv` call). Same column names, so nothing
 else needs to change. See `data/README.md` for details.
 
-
+## Getting started
 
 ```bash
 git clone <your-repo-url>
