@@ -1,0 +1,40 @@
+name: Basket Economics CI
+
+on:
+  push:
+    paths:
+      - 'projects/basket-economics/**'
+      - '.github/workflows/basket-economics.yml'
+  pull_request:
+    paths:
+      - 'projects/basket-economics/**'
+      - '.github/workflows/basket-economics.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: projects/basket-economics/requirements.txt
+      - name: Install project dependencies
+        run: pip install -r requirements.txt
+        working-directory: projects/basket-economics
+      - name: Generate deterministic demo data
+        run: python src/generate_data.py
+        working-directory: projects/basket-economics
+      - name: Run tests
+        run: pytest -q
+        working-directory: projects/basket-economics
+      - name: Run full analysis
+        run: python src/analysis.py
+        working-directory: projects/basket-economics
+      - name: Build Excel dashboard
+        run: python src/make_dashboard.py
+        working-directory: projects/basket-economics
+      - name: Run SQL layer
+        run: python src/load_sqlite.py
+        working-directory: projects/basket-economics
