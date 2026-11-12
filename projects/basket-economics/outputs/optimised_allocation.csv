@@ -1,0 +1,5 @@
+product_id,product_name,platform,quantity,listed_price,discount_pct,net_unit_price,delivery_days,coupon_code
+P001,Wireless Mouse,MegaMart,1,809.26,15,687.87,7,ME20SAVE
+P003,USB-C Hub,ShopKart,1,1647.72,10,1482.95,6,
+P005,Water Bottle,MegaMart,2,502.59,10,452.33,5,ME22SAVE
+P008,Backpack,ShopKart,1,1503.50,10,1353.15,2,SH85SAVE
